@@ -43,6 +43,8 @@ namespace Graph.Places
         public List<Place> GetBestRoute(Place start, Place finish)
         {
             var routes = GetRoutes(start, finish);
+            if (routes.Count == 0)
+                throw new Exception();
             List<Place> result = null;
             foreach (var route in routes)
             {
